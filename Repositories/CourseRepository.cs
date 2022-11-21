@@ -44,8 +44,8 @@ namespace TutorSearchSystem.Repositories
             IEnumerable<Course> courses = await _context.Course
                 .Where(c => c.BeginDate.Date.CompareTo(courseDto.BeginDate.Date) <= 0 
                 && c.EndDate.Date.CompareTo(courseDto.BeginDate.Date) >= 0
-                && c.BeginTime.TimeOfDay.CompareTo(courseDto.BeginTime.TimeOfDay) <= 0
-                && c.EndTime.TimeOfDay.CompareTo(courseDto.BeginTime.TimeOfDay) >= 0
+                && c.BeginTime.CompareTo(courseDto.BeginTime) <= 0
+                && c.EndTime.CompareTo(courseDto.BeginTime) >= 0
                 && c.CreatedBy == courseDto.CreatedBy 
                 && c.Status != GlobalConstants.DENIED_STATUS)
                 .ToListAsync();
@@ -550,8 +550,8 @@ namespace TutorSearchSystem.Repositories
            && c.EndDate.Date.CompareTo(filter.EndDate.Date) <= 0
            && c.Tutor.Gender.Contains(filter.TutorGender)
            && c.Tutor.EducationLevel.Contains(filter.EducationLevel)
-           && c.BeginTime.TimeOfDay.CompareTo(filter.MinTime.TimeOfDay) >= 0
-           && c.EndTime.TimeOfDay.CompareTo(filter.MaxTime.TimeOfDay) <= 0
+           && c.BeginTime.CompareTo(filter.MinTime.TimeOfDay) >= 0
+           && c.EndTime.CompareTo(filter.MaxTime.TimeOfDay) <= 0
            && c.DaysInWeek.Contains(filter.Weekdays)
             )
                  .Except<Course>(_context.Course.Where(c => c.Enrollments.Any(e => e.TuteeId == filter.TuteeId))

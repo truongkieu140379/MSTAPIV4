@@ -10,8 +10,8 @@ namespace TutorSearchSystem.Dtos
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public DateTime BeginTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public TimeSpan BeginTime { get; set; }
+        public TimeSpan EndTime { get; set; }
         public float StudyFee { get; set; }
         public string DaysInWeek { get; set; }
         public DateTime BeginDate { get; set; }

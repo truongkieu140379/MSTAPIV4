@@ -121,7 +121,7 @@ namespace TutorSearchSystem.Migrations
                     b.Property<DateTime>("BeginDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("BeginTime")
+                    b.Property<TimeSpan>("BeginTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("ClassHasSubjectId")
@@ -151,7 +151,7 @@ namespace TutorSearchSystem.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("EndTime")
+                    b.Property<TimeSpan>("EndTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
