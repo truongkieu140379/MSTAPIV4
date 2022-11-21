@@ -43,7 +43,7 @@ namespace TutorSearchSystem.Models
         public virtual ClassHasSubject ClassHasSubject { get; set; }
 
         [ForeignKey("Manager")]
-        public int? ConfirmedBy { get; set; } = null;
+        public Nullable <int> ConfirmedBy { get; set; }
         public virtual Manager Manager { get; set; }
         
         [DataType(DataType.Date)]
