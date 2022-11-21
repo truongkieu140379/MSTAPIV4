@@ -19,11 +19,11 @@ namespace TutorSearchSystem.Models
         [Required]
         [DataType(DataType.Time, ErrorMessage = "Begintime must be format hh:mm:ss")]
         [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = true)]
-        public TimeSpan BeginTime { get; set; }
+        public DateTime BeginTime { get; set; }
         [Required]
         [DataType(DataType.Time, ErrorMessage = "EndTime must be format hh:mm:ss")]
         [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = true)]
-        public TimeSpan EndTime { get; set; }
+        public DateTime EndTime { get; set; }
         [Required]
         [Range(0, float.MaxValue, ErrorMessage = "StudyFee Price must be a positive float number.")]
         public float StudyFee { get; set; }
